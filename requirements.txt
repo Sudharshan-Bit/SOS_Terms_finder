@@ -3,4 +3,4 @@ spacy
 sentence-transformers
 streamlit
 openpyxl
-re
+regex
