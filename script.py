@@ -90,8 +90,13 @@ from openpyxl import load_workbook
 import re
 import os
 
-# Ensure the Spacy model is installed
-os.system("python -m spacy download en_core_web_sm")
+# Ensure Spacy model is installed before loading
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    os.system("python -m spacy download en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+    
 # Load NLP Model
 nlp = spacy.load("en_core_web_sm")  # Named Entity Recognition
 embedder = SentenceTransformer("all-MiniLM-L6-v2")  # Sentence embeddings
