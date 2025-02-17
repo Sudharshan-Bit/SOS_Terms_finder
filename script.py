@@ -88,7 +88,10 @@ from sentence_transformers import SentenceTransformer, util
 import streamlit as st
 from openpyxl import load_workbook
 import re
+import os
 
+# Ensure the Spacy model is installed
+os.system("python -m spacy download en_core_web_sm")
 # Load NLP Model
 nlp = spacy.load("en_core_web_sm")  # Named Entity Recognition
 embedder = SentenceTransformer("all-MiniLM-L6-v2")  # Sentence embeddings
