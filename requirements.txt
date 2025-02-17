@@ -1,0 +1,6 @@
+pandas
+spacy
+sentence-transformers
+streamlit
+openpyxl
+re
